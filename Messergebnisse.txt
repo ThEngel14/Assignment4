@@ -1,0 +1,83 @@
+tohokuscenario
+
+-x 500
+-y 500
+-t 1000
+-c 10
+
+gnu:
+localKevin: 1.98sec
+No omp:		1.44sec
+omp:		1.51sec
+
+
+intel:
+No omp: 	1.09sec
+omp: 		2.03sec
+
+
+
+
+
+
+
+
+-x 1000
+-y 1000
+-t 1000
+-c 10
+
+gnu: (-lomp/-lopenmp) -fopenmp findet es nicht
+localKevin: 15.19sec
+No omp:		12.15sec
+omp:		12.05sec
+omp32_all_loop_auto: 				11.94sec
+
+Flags:
+-O0:		40.49sec
+-O1:		13.28sec
+-O2:		11.98sec
+-O3: 		11.98sec
+-fast 		-
+
+
+intel:
+No omp:		9.27sec
+omp: 		16.67sec
+omp32: 		23.9sec
+omp32_all_loop_static_chunk100: 	54.35sec
+omp32_all_loop_static_chunk50: 		39.04sec
+omp32_all_loop_dynamic_chunk100: 	72.43sec
+omp32_all_loop_dynamic_chunk50: 	39.58sec
+omp32_all_loop_guided: 				25.36sec
+omp32_all_loop_runtime: 			26.51sec
+omp32_all_loop_auto: 				25.42sec
+
+
+
+Flags:
+-O0:		46.71sec
+-O1:		10.84sec
+-O2:		8.98sec
+-O3: 		9.01sec
+-Ofast:		8.73sec
+
+
+Inline:
+Einfügen einer Methodenimplementation an Stelle des Methodenaufrufs.
+zB: statt 
+a = max(b,c);
+wird im Compiler stattdessen
+a = b>c ? b : c;
+gelesen.
+
+FWave: nur DEAD STATIC FUNCTION ELIMINATION
+
+VTune:
+-x 1000
+-y 1000
+-t 1000
+-c 10
+
+
+cpu time: 12.39
