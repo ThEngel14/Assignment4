@@ -17,6 +17,11 @@ omp: 		2.03sec
 
 
 
+
+
+
+
+
 -x 1000
 -y 1000
 -t 1000
@@ -66,4 +71,13 @@ wird im Compiler stattdessen
 a = b>c ? b : c;
 gelesen.
 
+FWave: nur DEAD STATIC FUNCTION ELIMINATION
 
+VTune:
+-x 1000
+-y 1000
+-t 1000
+-c 10
+
+
+cpu time: 12.39
